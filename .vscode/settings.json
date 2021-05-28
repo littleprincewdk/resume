@@ -1,0 +1,24 @@
+{
+  // 自动修复
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  // 正确识别文件
+  "files.associations": {
+    "*.less": "postcss"
+  },
+  // eslint
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.validate": ["javascript", "javascriptreact", "typescript"],
+  // stylelint
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "postcss.validate": false,
+  "stylelint.autoFixOnSave": true,
+
+  "git.ignoreLimitWarning": true
+}
