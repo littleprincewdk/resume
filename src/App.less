@@ -1,0 +1,51 @@
+@import './theme.less';
+
+.last-modified {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 1000px;
+  margin-left: -500px;
+  color: #bbb;
+  font-size: 12px;
+  text-align: right;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+  @media print {
+    display: none;
+  }
+}
+
+.download-pdf {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin-left: -500px;
+  color: #bbb;
+  font-size: 12px;
+  text-align: right;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+  @media print {
+    display: none;
+  }
+}
+
+.footer {
+  text-align: center;
+
+  .footer-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: @color-gray;
+    @media screen and (max-width: 1024px) {
+      margin-top: 25px;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}

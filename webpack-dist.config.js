@@ -6,11 +6,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const EndWebpackPlugin = require('end-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const RemarkHTML = require('remark-html');
 
 const outputPath = path.resolve(__dirname, 'docs');
 module.exports = {
   mode: 'production',
+  entry: './src/index.js',
   output: {
     path: outputPath,
     publicPath: '',
@@ -25,19 +26,60 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: { presets: ['@babel/env'] },
+      },
+      {
         test: /\.less$/,
-        // 提取出css
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[path][name]__[local]',
+                exportLocalsConvention: 'camelCase',
+              },
+            },
+          },
+          'less-loader',
+        ],
         include: path.resolve(__dirname, 'src'),
       },
       {
-        test: /\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf)$/,
-        use: 'base64-inline-loader',
+        test: /\.(gif|png|jpe?g|eot|woff|ttf|pdf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'remark-loader',
+            options: {
+              remarkOptions: {
+                plugins: [RemarkHTML],
+              },
+            },
+          },
+        ],
       },
     ],
-  },
-  entry: {
-    main: './src/main.js',
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -48,7 +90,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name]_[contenthash].css',
     }),
-    new OptimizeCSSAssetsPlugin(),
     new EndWebpackPlugin(async () => {
       // // 自定义域名
       // fs.writeFileSync(
