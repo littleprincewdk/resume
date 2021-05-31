@@ -9,5 +9,12 @@
     "startTime": "2013",
     "endTime": 2017
   },
-  "job": "前端开发工程师"
+  "job": "前端开发工程师",
+  "contact": {
+    "blog": "https://juejin.cn/user/4248168662309022/posts",
+    "github": "littleprincewdk",
+    "email": "2889110370@qq.com",
+    "phone": "13552484093",
+    "wechat": "wdk28891103700409"
+  }
 }

@@ -5,8 +5,6 @@ import workExperience from '../resume.config/workExperience.md';
 import projectExperience from '../resume.config/projectExperience.md';
 import Section from './Section';
 
-const [left, right] = projectExperience.split('<hr>');
-
 export default function Body() {
   return (
     <div className={styles.body}>

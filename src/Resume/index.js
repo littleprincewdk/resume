@@ -5,7 +5,7 @@ import styles from './index.less';
 
 export default function Resume() {
   return (
-    <main className={styles.resume}>
+    <main className={styles.resume} contentEditable>
       <Header />
       <Body />
     </main>

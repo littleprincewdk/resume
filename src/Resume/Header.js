@@ -9,7 +9,7 @@ import styles from './Header.less';
 
 export default function Header() {
   return (
-    <header className={styles.contentHd}>
+    <header className={styles.header}>
       <section className={styles.title}>
         <div className={styles.name}>
           <h1>{baseInfo.name}</h1>

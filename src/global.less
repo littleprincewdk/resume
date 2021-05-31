@@ -48,6 +48,11 @@ a {
   transition: all 0.2s ease-in-out;
 }
 
+[contenteditable]:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px @color-green;
+}
+
 :global {
   .row {
     display: flex;
