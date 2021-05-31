@@ -376,7 +376,6 @@ body {
   overflow: auto;
   color: #333;
   font-size: 14px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
   line-height: 1.5;
   background-color: #eee;
   -webkit-font-smoothing: antialiased;
@@ -388,9 +387,24 @@ body {
   }
 }
 a {
-  color: #00b38a;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+}
+#resume {
+  position: relative;
+  width: 1024px;
+  margin: 50px auto;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+@media screen and (max-width: 1024px) {
+  #resume {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 .row {
   display: flex;
@@ -399,7 +413,7 @@ a {
   flex: 1;
 }
 
-.src-Resume-Header__content-hd {
+.Header__header {
   width: 100%;
   padding: 30px 50px;
   overflow: hidden;
@@ -408,11 +422,11 @@ a {
   box-shadow: inset 0 0 0 1000px #00b38a;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Header__content-hd {
+  .Header__header {
     padding: 25px 30px;
   }
 }
-.src-Resume-Header__content-hd .src-Resume-Header__title {
+.Header__header .Header__title {
   width: 100%;
   margin-bottom: 5px;
   padding-bottom: 5px;
@@ -421,148 +435,140 @@ a {
   font-size: 52px;
   border-bottom: 2px solid #00a982;
 }
-.src-Resume-Header__content-hd .src-Resume-Header__name,
-.src-Resume-Header__content-hd .src-Resume-Header__job,
-.src-Resume-Header__content-hd .src-Resume-Header__info,
-.src-Resume-Header__content-hd .src-Resume-Header__contact {
+.Header__header .Header__name,
+.Header__header .Header__job,
+.Header__header .Header__info,
+.Header__header .Header__contact {
   width: 50%;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Header__content-hd .src-Resume-Header__name,
-  .src-Resume-Header__content-hd .src-Resume-Header__job,
-  .src-Resume-Header__content-hd .src-Resume-Header__info,
-  .src-Resume-Header__content-hd .src-Resume-Header__contact {
+  .Header__header .Header__name,
+  .Header__header .Header__job,
+  .Header__header .Header__info,
+  .Header__header .Header__contact {
     width: 100%;
     text-align: center;
   }
 }
-.src-Resume-Header__content-hd .src-Resume-Header__name {
+.Header__header .Header__name {
   float: left;
 }
-.src-Resume-Header__content-hd .src-Resume-Header__name h1 {
+.Header__header .Header__name h1 {
   font-weight: 500;
   font-family: 'Lucida Grande', 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
   letter-spacing: 5px;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Header__content-hd .src-Resume-Header__name h1 {
+  .Header__header .Header__name h1 {
     margin-top: 10px;
     line-height: 1.25;
     letter-spacing: 0;
   }
 }
-.src-Resume-Header__content-hd .src-Resume-Header__name h1 small {
-  padding-left: 10px;
-  font-weight: 400;
-  font-size: 24px;
-  letter-spacing: 0;
-}
-@media screen and (max-width: 720px) {
-  .src-Resume-Header__content-hd .src-Resume-Header__name h1 small {
-    display: block;
-    padding-left: 0;
-    font-size: 20px;
-    line-height: 1;
-  }
-}
-.src-Resume-Header__content-hd .src-Resume-Header__job {
+.Header__header .Header__job {
   float: right;
   text-align: right;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Header__content-hd .src-Resume-Header__job {
+  .Header__header .Header__job {
     text-align: center;
   }
 }
-.src-Resume-Header__content-hd .src-Resume-Header__job h2 {
+.Header__header .Header__job h2 {
   display: inline-block;
   font-size: 24px;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Header__content-hd .src-Resume-Header__job h2 {
+  .Header__header .Header__job h2 {
     margin: 5px auto 0;
     padding: 10px;
     border-top: 1px solid #00a982;
   }
 }
-.src-Resume-Header__content-hd .src-Resume-Header__info {
+.Header__header .Header__info {
   float: left;
   font-size: 16px;
   line-height: 1.6;
 }
-.src-Resume-Header__contact {
+.Header__header .Header__info input {
+  width: 100%;
+}
+.Header__contact {
   float: right;
   padding-right: 5px;
   font-size: 16px;
   line-height: 1.6;
   text-align: right;
 }
-.src-Resume-Header__contact ul {
+.Header__contact ul {
   margin: 8px 0 4px;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Header__contact ul {
+  .Header__contact ul {
     margin: 16px 0 0;
     text-align: center;
   }
 }
-.src-Resume-Header__contact ul > li {
+.Header__contact ul input {
+  width: auto;
+}
+.Header__contact ul > li {
   height: 22px;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Header__contact ul > li {
+  .Header__contact ul > li {
     display: inline-block;
   }
 }
-.src-Resume-Header__contact ul > li > a {
+.Header__contact ul > li > a {
   color: #fff;
   font-size: 14px;
   font-family: 'Lucida Grande', 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
   line-height: 22px;
 }
-.src-Resume-Header__contact ul > li > a:hover {
+.Header__contact ul > li > a:hover {
   color: #e8e8e8;
 }
-.src-Resume-Header__contact ul > li > a .src-Resume-Header__contact-link {
+.Header__contact ul > li > a .Header__contact-link {
   margin-right: 5px;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Header__contact ul > li > a .src-Resume-Header__contact-link {
+  .Header__contact ul > li > a .Header__contact-link {
     display: none;
   }
 }
-.src-Resume-Header__contact ul > li > a svg {
+.Header__contact ul > li > a svg {
   vertical-align: text-top;
   fill: #fff;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Header__contact ul > li > a svg {
+  .Header__contact ul > li > a svg {
     margin: 5px 8px;
   }
 }
 
-.src-Resume-Body__body {
+.Body__body {
   width: 100%;
   min-height: 200px;
   padding: 20px 30px 50px;
   overflow: hidden;
 }
 @media screen and (max-width: 720px) {
-  .src-Resume-Body__body {
+  .Body__body {
     padding: 20px 20px 50px;
   }
 }
 
-.src-Resume-Section__section {
+.Section__section {
   flex: 1;
   padding: 10px 15px;
 }
-.src-Resume-Section__header {
+.Section__header {
   position: relative;
   height: 32px;
   margin: 10px auto 15px;
 }
-.src-Resume-Section__header::before {
+.Section__header::before {
   position: absolute;
   top: 50%;
   left: 0;
@@ -573,7 +579,7 @@ a {
   border-top: 1px solid #ededed;
   content: '';
 }
-.src-Resume-Section__header::after {
+.Section__header::after {
   position: absolute;
   top: 50%;
   right: 0;
@@ -584,7 +590,7 @@ a {
   border-top: 1px solid #ededed;
   content: '';
 }
-.src-Resume-Section__header .src-Resume-Section__title {
+.Section__header .Section__title {
   position: relative;
   z-index: 1;
   width: 24%;
@@ -597,49 +603,49 @@ a {
   background-color: #eee;
   border-radius: 32px;
 }
-.src-Resume-Section__body {
+.Section__header .Section__title input {
+  text-align: center;
+}
+.Section__body {
   line-height: 22px;
   text-align: justify;
   word-break: break-all;
 }
-.src-Resume-Section__body ul li {
+.Section__body ul li {
   margin-top: 8px;
   list-style: square inside;
 }
-.src-Resume-Section__body ol {
+.Section__body ol {
   padding-left: 18px;
   list-style: decimal;
 }
-.src-Resume-Section__body h3 {
+.Section__body h3 {
   min-height: 30px;
   padding: 10px 0 5px;
   font-weight: 500;
   line-height: 20px;
 }
-.src-Resume-Section__body p {
+.Section__body p {
   display: flex;
 }
-.src-Resume-Section__body p strong {
+.Section__body p strong {
   word-break: keep-all;
 }
 
-.src-Resume-index__resume {
-  position: relative;
-  width: 1024px;
-  margin: 50px auto;
-  overflow: hidden;
-  background-color: #fff;
-  border-radius: 5px;
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
 }
-@media screen and (max-width: 1024px) {
-  .src-Resume-index__resume {
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-  }
+a {
+  color: #00b38a;
+}
+#resume {
+  box-shadow: 0 0 3px 0 #00b38a;
+}
+#resume:focus {
+  box-shadow: 0 0 3px 2px #00b38a;
 }
 
-.src-App__last-modified {
+.App__last-modified {
   position: absolute;
   top: 30px;
   left: 50%;
@@ -650,16 +656,16 @@ a {
   text-align: right;
 }
 @media screen and (max-width: 1024px) {
-  .src-App__last-modified {
+  .App__last-modified {
     display: none;
   }
 }
 @media print {
-  .src-App__last-modified {
+  .App__last-modified {
     display: none;
   }
 }
-.src-App__download-pdf {
+.App__download-pdf {
   position: absolute;
   top: 30px;
   left: 50%;
@@ -669,30 +675,82 @@ a {
   text-align: right;
 }
 @media screen and (max-width: 1024px) {
-  .src-App__download-pdf {
+  .App__download-pdf {
     display: none;
   }
 }
 @media print {
-  .src-App__download-pdf {
+  .App__download-pdf {
     display: none;
   }
 }
-.src-App__footer {
+.App__tips {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 300px;
+  padding: 30px 20px;
+  line-height: 1.8em;
+}
+@media print {
+  .App__tips {
+    display: none;
+  }
+}
+.App__tips .App__menu-icon,
+.App__tips .App__github-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.App__tips .App__tip-content {
+  transform: translate3d(-100%, 0, 0);
+  opacity: 0;
+  transition: all 0.2s;
+}
+.App__tips .App__tip-content.App__show {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+.App__tips svg {
+  vertical-align: middle;
+}
+.App__toolbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  padding: 10px;
+}
+@media print {
+  .App__toolbar {
+    display: none;
+  }
+}
+.App__toolbar button {
+  padding: 10px;
+  border: none;
+}
+.App__toolbar button svg {
+  width: 25px;
+  height: 25px;
+}
+.App__footer {
   text-align: center;
 }
-.src-App__footer .src-App__footer-link {
+.App__footer .App__footer-link {
   display: inline-block;
   margin-bottom: 25px;
   color: #d1d1d1;
 }
 @media screen and (max-width: 1024px) {
-  .src-App__footer .src-App__footer-link {
+  .App__footer .App__footer-link {
     margin-top: 25px;
   }
 }
 @media print {
-  .src-App__footer {
+  .App__footer {
     display: none;
   }
 }
