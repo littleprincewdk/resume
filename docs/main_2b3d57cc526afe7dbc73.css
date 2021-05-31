@@ -619,17 +619,30 @@ a {
   padding-left: 18px;
   list-style: decimal;
 }
-.Section__body h3 {
-  min-height: 30px;
-  padding: 10px 0 5px;
-  font-weight: 500;
-  line-height: 20px;
+.Section__body strong:only-child {
+  margin-bottom: 5px;
 }
-.Section__body p {
+.Section__body.Section__single-row div {
   display: flex;
 }
-.Section__body p strong {
+.Section__body.Section__single-row div > strong {
   word-break: keep-all;
+}
+.Section__body.Section__single-row div > ol,
+.Section__body.Section__single-row div span,
+.Section__body.Section__single-row div div {
+  flex: 1;
+}
+.Section__body.Section__split div:not(.row) div:not(.col) {
+  display: flex;
+}
+.Section__body.Section__split div:not(.row) div:not(.col) > strong {
+  word-break: keep-all;
+}
+.Section__body.Section__split div:not(.row) div:not(.col) > ol,
+.Section__body.Section__split div:not(.row) div:not(.col) span,
+.Section__body.Section__split div:not(.row) div:not(.col) div {
+  flex: 1;
 }
 
 body {

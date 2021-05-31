@@ -80,7 +80,8 @@ module.exports = {
         ],
       },
       {
-        test: /data\.html$/,
+        test: /\.html$/,
+        exclude: /src\/index\.html$/,
         type: 'asset/source',
       },
     ],
