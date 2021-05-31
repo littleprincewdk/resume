@@ -41,7 +41,7 @@ export default function Header() {
           </li>
           <li>
             <a href="https://github.com/littleprincewdk">
-              <span className={styles.contactLink}>github - littleprincewdk</span>
+              <span className={styles.contactLink}>littleprincewdk</span>
               <GithubIcon />
             </a>
           </li>

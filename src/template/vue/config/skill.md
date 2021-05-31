@@ -1,4 +1,0 @@
-- 掌握 JavaScript
-- 掌握前端工程化相关知识：webpack、babel、gulp、eslint 等工具，为团队开发过 webpack、gulp、babel、[eslint](https://github.com/littleprincewdk/eslint-plugin-ahaha-miniprogram)、[prettier](https://github.com/littleprincewdk/prettier-plugin-format-true-value-attribute)、[less](https://github.com/littleprincewdk/less-plugin-import) 等的插件
-- 掌握 React
-- 掌握小程序开发

@@ -49,7 +49,7 @@ export default function App() {
           <ResetIcon />
           可重置草稿
           <br />
-          3. 右键可选择【打印】保存为PDF
+          3. 右键可选择【打印】保存为PDF，注意设置【网页】为"自定义"，去除空白页
           <br />
           <br />
           TODO：更多模板选择
@@ -66,6 +66,9 @@ export default function App() {
         contentEditable
         dangerouslySetInnerHTML={{ __html: resumeData }}
       />
+      {/* <main id="resume" contentEditable>
+        <Resume />
+      </main> */}
       {/* <React.Suspense fallback={<div />}>
         <main id="resume" contentEditable>
           <Resume />

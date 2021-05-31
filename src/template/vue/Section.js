@@ -1,15 +1,21 @@
 import React from 'react';
+import classnames from 'classnames';
 import styles from './Section.less';
 
 export default function Section(props) {
   const { title, children } = props;
 
-  let body = <div className={styles.body} dangerouslySetInnerHTML={{ __html: children }} />;
+  let body = (
+    <div
+      className={classnames(styles.body, styles.singleRow)}
+      dangerouslySetInnerHTML={{ __html: children }}
+    />
+  );
 
-  if (children.includes('<hr>')) {
-    const [left, right] = children.split('<hr>');
+  if (children.includes('<hr />')) {
+    const [left, right] = children.split('<hr />');
     body = (
-      <div className={styles.body}>
+      <div className={classnames(styles.body, styles.split)}>
         <div className="row">
           <div
             className="col"

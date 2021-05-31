@@ -64,18 +64,41 @@
     list-style: decimal;
   }
 
-  h3 {
-    min-height: 30px;
-    padding: 10px 0 5px;
-    font-weight: 500;
-    line-height: 20px;
+  strong:only-child {
+    margin-bottom: 5px;
   }
 
-  p {
-    display: flex;
+  &.single-row {
+    div {
+      display: flex;
 
-    strong {
-      word-break: keep-all;
+      & > strong {
+        word-break: keep-all;
+      }
+
+      & > ol,
+      span,
+      div {
+        flex: 1;
+      }
+    }
+  }
+
+  &.split {
+    :global {
+      div:not(.row) div:not(.col) {
+        display: flex;
+
+        & > strong {
+          word-break: keep-all;
+        }
+
+        & > ol,
+        span,
+        div {
+          flex: 1;
+        }
+      }
     }
   }
 }
