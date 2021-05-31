@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Body.less';
-import skill from '../resume.config/skill.md';
-import workExperience from '../resume.config/workExperience.md';
-import projectExperience from '../resume.config/projectExperience.md';
+import skill from './config/skill.md';
+import workExperience from './config/workExperience.md';
+import projectExperience from './config/projectExperience.md';
 import Section from './Section';
 
 export default function Body() {

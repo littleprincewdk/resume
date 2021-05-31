@@ -1,10 +1,10 @@
 import React from 'react';
-import baseInfo from '../resume.config/baseInfo.json';
-import BlogIcon from '../assets/blog.svg';
-import GithubIcon from '../assets/github.svg';
-import EmailIcon from '../assets/email.svg';
-import PhoneIcon from '../assets/phone.svg';
-import WechatIcon from '../assets/wechat.svg';
+import baseInfo from './config/baseInfo.json';
+import BlogIcon from '../../assets/blog.svg';
+import GithubIcon from '../../assets/github.svg';
+import EmailIcon from '../../assets/email.svg';
+import PhoneIcon from '../../assets/phone.svg';
+import WechatIcon from '../../assets/wechat.svg';
 import styles from './Header.less';
 
 export default function Header() {

@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './Header';
 import Body from './Body';
-import styles from './index.less';
+import './index.less';
 
 export default function Resume() {
   return (
-    <main className={styles.resume} contentEditable>
+    <React.Fragment>
       <Header />
       <Body />
-    </main>
+    </React.Fragment>
   );
 }

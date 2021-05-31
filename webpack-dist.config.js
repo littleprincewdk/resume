@@ -39,7 +39,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[path][name]__[local]',
+                localIdentName: '[name]__[local]',
                 exportLocalsConvention: 'camelCase',
               },
             },
@@ -78,6 +78,10 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /data\.html$/,
+        type: 'asset/source',
       },
     ],
   },

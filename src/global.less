@@ -1,5 +1,4 @@
 @import '~normalize.css';
-@import './theme.less';
 
 * {
   box-sizing: border-box;
@@ -32,7 +31,6 @@ body {
   overflow: auto;
   color: #333;
   font-size: 14px;
-  font-family: @font-family;
   line-height: 1.5;
   background-color: #eee;
   -webkit-font-smoothing: antialiased;
@@ -43,17 +41,27 @@ body {
 }
 
 a {
-  color: @color-green;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
-}
-
-[contenteditable]:focus {
-  outline: none;
-  box-shadow: 0 0 3px 2px @color-green;
 }
 
 :global {
+  #resume {
+    position: relative;
+    width: 1024px;
+    margin: 50px auto;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 5px;
+    outline: none;
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
   .row {
     display: flex;
     .col {
