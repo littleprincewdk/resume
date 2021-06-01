@@ -749,6 +749,14 @@ a {
   width: 25px;
   height: 25px;
 }
+.App__resume-time {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  display: flex;
+  padding: 10px;
+  color: #aaa;
+}
 .App__footer {
   text-align: center;
 }
