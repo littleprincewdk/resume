@@ -4,6 +4,7 @@ import Resume from './template/vue';
 import ResetIcon from './assets/reset.svg';
 import MenuIcon from './assets/menu.svg';
 import GithubIcon from './assets/github.svg';
+import SaveIcon from './assets/save.svg';
 import data from './template/vue/data.html';
 import styles from './App.less';
 
@@ -11,19 +12,39 @@ import styles from './App.less';
 
 export default function App() {
   const [resumeData, setResumeData] = useState(localStorage.getItem('resume') || data);
+  let [resumeTime, setResumeTime] = useState(localStorage.getItem('resumeTime'));
   const [showMenu, setShowMenu] = useState(true);
   const $resume = useRef(null);
 
+  if (resumeTime) {
+    resumeTime = new Date();
+    resumeTime = `${resumeTime.getFullYear()}-${
+      resumeTime.getMonth() + 1
+    }-${resumeTime.getDate()} ${resumeTime.getHours()}:${resumeTime.getMinutes()}:${resumeTime.getSeconds()}`;
+  }
+
   useEffect(() => {
-    window.addEventListener('unload', () => {
-      localStorage.setItem('resume', $resume.current.innerHTML);
-    });
+    window.onbeforeunload = (e) => {
+      save();
+      return true;
+    };
   }, []);
+
+  function save() {
+    const now = Date.now();
+    localStorage.setItem('resume', $resume.current.innerHTML);
+    localStorage.setItem('resumeTime', now);
+    setResumeTime(now);
+  }
 
   function reset() {
     const confirm = window.confirm('重置将清空草稿，确定重置吗？');
     if (confirm) {
       setResumeData(data);
+
+      localStorage.removeItem('resume');
+      localStorage.removeItem('resumeTime');
+      setResumeTime(0);
     }
   }
 
@@ -59,7 +80,11 @@ export default function App() {
         <button onClick={reset} title="重置">
           <ResetIcon />
         </button>
+        <button onClick={save} title="保存">
+          <SaveIcon />
+        </button>
       </div>
+      {resumeTime ? <div className={styles.resumeTime}>保存于 {resumeTime}</div> : null}
       <main
         ref={$resume}
         id="resume"
