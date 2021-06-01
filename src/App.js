@@ -5,6 +5,8 @@ import ResetIcon from './assets/reset.svg';
 import MenuIcon from './assets/menu.svg';
 import GithubIcon from './assets/github.svg';
 import SaveIcon from './assets/save.svg';
+import EditIcon from './assets/edit.svg';
+import PreviewIcon from './assets/preview.svg';
 import data from './template/vue/data.html';
 import styles from './App.less';
 
@@ -14,6 +16,7 @@ export default function App() {
   const [resumeData, setResumeData] = useState(localStorage.getItem('resume') || data);
   let [resumeTime, setResumeTime] = useState(localStorage.getItem('resumeTime'));
   const [showMenu, setShowMenu] = useState(true);
+  const [mode, setMode] = useState('edit');
   const $resume = useRef(null);
 
   if (resumeTime) {
@@ -29,6 +32,16 @@ export default function App() {
       return true;
     };
   }, []);
+
+  function switchMode() {
+    if (mode === 'edit') {
+      setMode('preview');
+      setShowMenu(false);
+    } else {
+      setMode('edit');
+      setShowMenu(true);
+    }
+  }
 
   function save() {
     const now = Date.now();
@@ -73,10 +86,17 @@ export default function App() {
           3. 右键可选择【打印】保存为PDF，注意设置【网页】为"自定义"，去除空白页
           <br />
           <br />
-          TODO：更多模板选择
+          TODO：
+          <br />
+          1. feat: 更多模板选择 <br />
+          2. feat: 编辑链接 <br />
+          3. fix: key-value无法扩展
         </div>
       </div>
       <div className={styles.toolbar}>
+        <button onClick={switchMode} title={mode === 'preview' ? '编辑' : '预览'}>
+          {mode === 'preview' ? <EditIcon /> : <PreviewIcon />}
+        </button>
         <button onClick={reset} title="重置">
           <ResetIcon />
         </button>
@@ -88,7 +108,7 @@ export default function App() {
       <main
         ref={$resume}
         id="resume"
-        contentEditable
+        contentEditable={mode === 'edit'}
         dangerouslySetInnerHTML={{ __html: resumeData }}
       />
       {/* <main id="resume" contentEditable>
