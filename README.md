@@ -17,4 +17,5 @@ mhmadhamster.postcss-language
 
 - feat: 更多模板选择
 - feat: 编辑链接
+- feat: 屏幕适配
 - fix: key-value 无法扩展

@@ -44,8 +44,14 @@ export default function App() {
   }
 
   function save() {
+    const content = $resume.current.innerHTML;
+
+    if (content === resumeData) {
+      return;
+    }
+
     const now = Date.now();
-    localStorage.setItem('resume', $resume.current.innerHTML);
+    localStorage.setItem('resume', content);
     localStorage.setItem('resumeTime', now);
     setResumeTime(now);
   }
@@ -98,7 +104,8 @@ export default function App() {
           <br />
           1. feat: 更多模板选择 <br />
           2. feat: 编辑链接 <br />
-          3. fix: key-value无法扩展
+          3. feat: 屏幕适配 <br />
+          4. fix: key-value无法扩展
         </div>
       </div>
       <div className={styles.toolbar}>
